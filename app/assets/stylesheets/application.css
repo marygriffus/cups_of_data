@@ -13,3 +13,82 @@
  *= require_tree .
  *= require_self
  */
+
+.clearfix {
+  overflow: auto;
+}
+
+* {
+  font-family: "Palatino Linotype", "Book Antiqua";
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+form {
+  font-size: 20px;
+  padding: 10px;
+}
+
+form label {
+  display: block;
+  padding: 5px;
+}
+
+form input {
+  font-size: 20px;
+}
+
+header img {
+  position: absolute;
+  down: 15px;
+  left: 10px;
+  height: 50px;
+}
+
+header {
+  position: relative;
+  font-size: 40px;
+  background-color: #ff9999;
+
+}
+
+header a {
+  margin-left: 70px;
+  text-decoration: none;
+
+}
+
+.bra {
+  display: block;
+  font-size: 20px;
+  padding: 1em;
+  border: 15px solid #99ffff;
+  border-radius: 20px;
+  margin: 1em 25%;
+}
+
+.bra img {
+  max-height: 200px;
+  max-width: 200px;
+  margin-right: 1em;
+  float: left;
+}
+
+.bra-size {
+  width: 22%;
+  display: inline;
+  font-size: 15px;
+  padding: 1em;
+  border: 10px solid #99ccff;
+  background-color: #99ccff;
+  border-radius: 20px;
+  margin: 1em;
+  float: left;
+}
+
+.star {
+  height: 1em;
+  display: inline;
+  float: left;
+}

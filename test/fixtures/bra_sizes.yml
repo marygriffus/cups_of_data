@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  band_length: 9.99
+  stretched_band: MyString
+  decimal: MyString
+  cup_width: MyString
+  decimal: MyString
+  cup_depth: MyString
+  decimal: MyString
+  cup_separation: 9.99
+  gore_height: 9.99
+  num_hooks: 1
+
+two:
+  band_length: 9.99
+  stretched_band: MyString
+  decimal: MyString
+  cup_width: MyString
+  decimal: MyString
+  cup_depth: MyString
+  decimal: MyString
+  cup_separation: 9.99
+  gore_height: 9.99
+  num_hooks: 1
