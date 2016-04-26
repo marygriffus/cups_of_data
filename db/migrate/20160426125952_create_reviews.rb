@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.string :author
       t.text :body
-      t.integer :bra_id
+      t.references :bra
 
       t.timestamps null: false
     end

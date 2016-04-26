@@ -12,7 +12,7 @@ class CreateBraSizes < ActiveRecord::Migration
       t.integer :rating_aesthetic
       t.integer :rating_comfort
       t.integer :rating_quality
-      t.integer :bra_id
+      t.references :bra
 
       t.timestamps null: false
     end

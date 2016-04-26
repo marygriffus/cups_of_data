@@ -1,14 +1,33 @@
 <div class="bra clearfix">
   <img src="<%= bra.image_url %>">
-  <p>Brand: <%= bra.brand %></p>
-  <p>Model: <%= bra.model %></p>
-  <p>Style: <%= bra.style %></p>
-  <div class="actions">
-    <% if @index %>
-      <%= link_to "Details and sizes", bra %>
-    <% end %>
-    <%= link_to "Edit", edit_bra_path(bra) %>
-    <%= link_to "Delete", bra_path(bra), method: 'delete' %>
-    <%= link_to "Add new size", new_bra_bra_size_path([bra, @bra_size]) %>
+
+  <div class="bra-info clearfix">
+    <p>Brand: <%= bra.brand %></p>
+    <p>Model: <%= bra.model %></p>
+    <p>Style: <%= bra.style %></p>
+
+    <div class="actions">
+      <% if @index %>
+        <li><%= link_to "Details and sizes", bra %></li>
+      <% end %>
+      <li><%= link_to "Edit", edit_bra_path(bra) %></li>
+      <li><%= link_to "Delete", bra_path(bra), method: 'delete' %></li>
+      <li><%= link_to "Add new size", new_bra_bra_size_path([bra, @bra_size]) %></li>
+    </div>
+
+    <div class="tags">
+      <h4>Tags</h4>
+      <% bra.tags.each do |tag| %>
+        <span class="tag"><%= link_to tag.category.name, category_path(tag) %></span>
+      <% end %>
+      <div class="add-tag field">
+        <%= form_for bra do |f| %>
+          <%= f.text_field(:all_tags, value: nil)%>
+          <%= f.submit "Add tag" %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
+
 </div>

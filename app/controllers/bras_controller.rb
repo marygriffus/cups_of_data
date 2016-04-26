@@ -4,6 +4,7 @@ class BrasController < ApplicationController
     @bras = Bra.all
     @index = true
     @bra_size = BraSize.new
+    @tag = Tag.new
   end
 
   def new
@@ -20,6 +21,7 @@ class BrasController < ApplicationController
     @bra_sizes = @bra.bra_sizes
     @review = Review.new
     @reviews = @bra.reviews
+    @tag = Tag.new
   end
 
   def edit
@@ -41,7 +43,7 @@ class BrasController < ApplicationController
 
 private
 def bra_params
-  params.require(:bra).permit(:brand, :model, :image_url, :style)
+  params.require(:bra).permit(:brand, :model, :image_url, :style, :all_tags)
 end
 
 end

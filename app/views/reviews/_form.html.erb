@@ -1,10 +1,14 @@
 <%= form_for [@bra, @review] do |f| %>
 
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
 
   <%= f.submit %>
 

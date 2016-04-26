@@ -1,0 +1,5 @@
+<h4>Bras tagged with: <%= @category.name %></h4>
+
+<% @tags.each do |t| %>
+  <%= render t.bra %>
+<% end %>

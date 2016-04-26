@@ -1,13 +1,24 @@
 <%= form_for @bra do |f| %>
 
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
+  <div class="field">
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+  </div>
 
-  <%= f.label :model %>
-  <%= f.text_field :model %>
+  <div class="field">
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
 
-  <%= f.label :image_url%>
-  <%= f.text_field :image_url %>
+  <div class="field">
+    <%= f.label :image_url%>
+    <%= f.text_field :image_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :all_tags %>
+    <%= f.text_field(:all_tags, value: nil) %>
+  </div>
 
   <%= f.submit %>
 
