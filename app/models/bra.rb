@@ -1,3 +1,3 @@
 class Bra < ActiveRecord::Base
-  has_many :bra_sizes
+  has_many :bra_sizes, dependent: :destroy
 end

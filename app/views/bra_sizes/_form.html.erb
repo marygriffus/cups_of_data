@@ -1,0 +1,40 @@
+<%= form_for [@bra, @bra_size] do |f| %>
+
+  <%= f.label :label_size %>
+  <%= f.text_field :label_size %>
+
+  <%= f.label :band_length %>
+  <%= f.text_field :band_length %>
+
+  <%= f.label :stretched_band %>
+  <%= f.text_field :stretched_band %>
+
+  <%= f.label :cup_width %>
+  <%= f.text_field :cup_width %>
+
+  <%= f.label :cup_depth %>
+  <%= f.text_field :cup_depth %>
+
+  <%= f.label :cup_separation %>
+  <%= f.text_field :cup_separation %>
+
+  <%= f.label :gore_height %>
+  <%= f.text_field :gore_height %>
+
+  <%= f.label :num_hooks %>
+  <%= f.text_field :num_hooks %>
+
+  <%= f.label :rating_aesthetic %>
+  <%= f.text_field :rating_aesthetic %>
+
+  <%= f.label :rating_comfort %>
+  <%= f.text_field :rating_comfort %>
+
+  <%= f.label :rating_quality %>
+  <%= f.text_field :rating_quality %>
+
+  <%= f.hidden_field :bra_id %>
+
+  <%= f.submit %>
+
+<% end %>

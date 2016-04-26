@@ -1,0 +1,42 @@
+<div class="bra-size">
+  <p>Label size: <%= bra_size.label_size %></p>
+  <p>Band length: <%= bra_size.band_length %> in.</p>
+  <p>Stretched band length: <%= bra_size.stretched_band %> in.</p>
+  <p>Cup width: <%= bra_size.cup_width %> in.</p>
+  <p>Cup depth: <%= bra_size.cup_depth %> in.</p>
+  <p>Cup separation: <%= bra_size.cup_separation %> in.</p>
+  <p>Gore height: <%= bra_size.gore_height %> in.</p>
+  <p>Number of hooks: <%= bra_size.num_hooks %></p>
+  <p>Aesthetic rating:
+    <div class="rating">
+      <% bra_size.rating_aesthetic.times do %>
+      <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/1000px-Gold_Star.svg.png">
+      <% end %>
+      <% (5 - bra_size.rating_aesthetic).times do %></p>
+        <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1024px-Empty_Star.svg.png">
+      <% end %>
+    </div><br>
+  <p>Comfort rating:</p>
+  <div class="rating">
+    <% bra_size.rating_comfort.times do %>
+    <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/1000px-Gold_Star.svg.png">
+    <% end %>
+    <% (5 - bra_size.rating_comfort).times do %></p>
+      <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1024px-Empty_Star.svg.png">
+    <% end %>
+  </div><br>
+  <p>Quality rating:
+  <div class="rating">
+    <% bra_size.rating_quality.times do %>
+    <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/1000px-Gold_Star.svg.png">
+    <% end %>
+    <% (5 - bra_size.rating_quality).times do %></p>
+      <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1024px-Empty_Star.svg.png">
+    <% end %>
+  </div></p><br>
+  <div class="actions">
+    <%= link_to "Edit", edit_bra_bra_size_path(@bra, bra_size) %>
+    <%= link_to "Delete", bra_bra_size_path(@bra, bra_size), method: 'delete' %>
+  </div>
+
+</div>

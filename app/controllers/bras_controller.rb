@@ -3,6 +3,7 @@ class BrasController < ApplicationController
   def index
     @bras = Bra.all
     @index = true
+    @bra_size = BraSize.new
   end
 
   def new

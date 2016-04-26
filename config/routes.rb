@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root 'bras#index'
-  resources :bras
+  resources :bras do
+    resources :bra_sizes, only: [:new, :create, :edit, :update, :destroy]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

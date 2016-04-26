@@ -13,7 +13,14 @@
   <%= link_to "Cups of data", bras_path %>
 </header>
 
+<nav>
+  <li><%= link_to "See all bras", bras_path %></li>
+  <li><%= link_to "Add new bra", new_bra_path %></li>
+</nav>
+
+<div class="main clearfix">
 <%= yield %>
+</div>
 
 </body>
 </html>
