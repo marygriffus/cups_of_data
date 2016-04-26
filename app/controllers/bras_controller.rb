@@ -18,6 +18,8 @@ class BrasController < ApplicationController
   def show
     @bra = Bra.find(params[:id])
     @bra_sizes = @bra.bra_sizes
+    @review = Review.new
+    @reviews = @bra.reviews
   end
 
   def edit

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'bras#index'
   resources :bras do
     resources :bra_sizes, only: [:new, :create, :edit, :update, :destroy]
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

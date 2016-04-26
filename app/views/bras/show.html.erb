@@ -1,3 +1,12 @@
 <%= render @bra %>
 
-<%= render @bra_sizes %>
+<div class="data-points clearfix">
+  <h3>Size data</h3>
+  <%= render @bra_sizes %>
+</div>
+
+<div class="reviews clearfix">
+  <h3>Reviews for <%= @bra.brand + ' ' + @bra.model %></h3>
+  <%= render @reviews %>
+  <%= render 'reviews/form' %>
+</div>

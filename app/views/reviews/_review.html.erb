@@ -1,0 +1,6 @@
+<div class="review">
+  <p><%= review.author %> said: </p>
+  <p><%= review.body %></p>
+  <%= link_to "Edit review", edit_bra_review_path(@bra, review) %>
+  <%= link_to "Delete review", bra_review_path(@bra, review), method: 'delete' %>
+</div>
