@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  load_and_authorize_resource
 
   def new
     @bra = Bra.find(params[:bra_id])
@@ -13,7 +14,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to bra_path(@bra)
     else
-      render :bra
+      redirect_to bra_path(@bra)
     end
   end
 
