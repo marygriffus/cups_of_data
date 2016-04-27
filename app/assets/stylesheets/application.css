@@ -24,6 +24,10 @@
   padding: 0px;
 }
 
+li {
+  list-style-type: none;
+}
+
 form {
   text-align: left;
   font-size: 20px;
@@ -64,12 +68,19 @@ header a {
   color: #333333;
 }
 
+header .user {
+  position: relative;
+  top: 15px;
+  font-size: 25px;
+  float: right;
+  font-weight: lighter;
+}
+
 nav {
   float: left;
   color: #ffcc33;
   font-size: 20px;
   width: 20%;
-  list-style-type: none;
 }
 
 nav a {
@@ -191,4 +202,8 @@ label {
 
 .tag a {
   text-decoration: none;
+}
+
+.notices {
+  background-color: #99ccff;
 }

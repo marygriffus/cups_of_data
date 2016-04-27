@@ -1,4 +1,6 @@
 class BraSizesController < ApplicationController
+  load_and_authorize_resource
+
 
   def new
     @bra = Bra.find(params[:bra_id])
@@ -9,8 +11,12 @@ class BraSizesController < ApplicationController
     @bra = Bra.find(params[:bra_id])
     @bra_size = BraSize.new(bra_size_params)
     @bra_size.bra = @bra
-    @bra_size.save
-    redirect_to bra_path(@bra)
+    @bra_size.user = current_user
+    if @bra_size.save
+      redirect_to bra_path(@bra)
+    else
+      render :new
+    end
   end
 
   def edit

@@ -1,4 +1,6 @@
 class BrasController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:index, :show]
 
   def index
     @bras = Bra.all
@@ -12,8 +14,13 @@ class BrasController < ApplicationController
   end
 
   def create
-    @bra = Bra.create!(bra_params)
-    redirect_to bra_path(@bra)
+    @bra = Bra.new(bra_params)
+    @bra.user = current_user
+    if @bra.save
+      redirect_to bra_path(@bra)
+    else
+      render :new
+    end
   end
 
   def show

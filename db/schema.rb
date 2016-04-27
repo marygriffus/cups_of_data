@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426150953) do
+ActiveRecord::Schema.define(version: 20160427140155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160426150953) do
     t.integer  "rating_comfort"
     t.integer  "rating_quality"
     t.integer  "bra_id"
+    t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160426150953) do
     t.string   "model"
     t.string   "image_url"
     t.string   "style"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160426150953) do
     t.string   "author"
     t.text     "body"
     t.integer  "bra_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,6 +68,17 @@ ActiveRecord::Schema.define(version: 20160426150953) do
 
   add_index "tags", ["bra_id"], name: "index_tags_on_bra_id", using: :btree
   add_index "tags", ["category_id"], name: "index_tags_on_category_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "tags", "bras"
   add_foreign_key "tags", "categories"

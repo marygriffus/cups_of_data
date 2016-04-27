@@ -10,8 +10,10 @@
       <% if @index %>
         <li><%= link_to "Details and sizes", bra %></li>
       <% end %>
+      <% if can? :edit, bra %>
       <li><%= link_to "Edit", edit_bra_path(bra) %></li>
       <li><%= link_to "Delete", bra_path(bra), method: 'delete' %></li>
+      <% end %>
       <li><%= link_to "Add new size", new_bra_bra_size_path([bra, @bra_size]) %></li>
     </div>
 

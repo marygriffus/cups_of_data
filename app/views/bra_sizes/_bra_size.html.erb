@@ -25,18 +25,20 @@
       <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1024px-Empty_Star.svg.png">
     <% end %>
   </div><br>
-  <p>Quality rating:
-  <div class="rating">
+  <div>Quality rating:
+  <div class="rating clearfix">
     <% bra_size.rating_quality.times do %>
     <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/1000px-Gold_Star.svg.png">
     <% end %>
     <% (5 - bra_size.rating_quality).times do %></p>
       <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1024px-Empty_Star.svg.png">
     <% end %>
-  </div></p><br>
-  <div class="actions">
-    <%= link_to "Edit", edit_bra_bra_size_path(@bra, bra_size) %>
-    <%= link_to "Delete", bra_bra_size_path(@bra, bra_size), method: 'delete' %>
-  </div>
+  </div></div>
+  <% if can? :edit, bra_size %>
+  <ul class="actions">
+    <li><%= link_to "Edit", edit_bra_bra_size_path(@bra, bra_size) %></li>
+    <li><%= link_to "Delete", bra_bra_size_path(@bra, bra_size), method: 'delete' %></li>
+  </ul>
+  <% end %>
 
 </div>

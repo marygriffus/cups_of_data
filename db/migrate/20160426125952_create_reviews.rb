@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :author
       t.text :body
       t.references :bra
+      t.references :user
 
       t.timestamps null: false
     end

@@ -5,6 +5,7 @@ class CreateBras < ActiveRecord::Migration
       t.string :model
       t.string :image_url
       t.string :style
+      t.references :user
 
       t.timestamps null: false
     end

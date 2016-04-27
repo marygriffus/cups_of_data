@@ -9,8 +9,12 @@ class ReviewsController < ApplicationController
     @bra = Bra.find(params[:bra_id])
     @review = Review.new(review_params)
     @review.bra = @bra
-    @review.save
-    redirect_to bra_path(@bra)
+    @review.user = current_user
+    if @review.save
+      redirect_to bra_path(@bra)
+    else
+      render :bra
+    end
   end
 
   def edit

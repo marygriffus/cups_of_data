@@ -1,7 +1,8 @@
 class Bra < ActiveRecord::Base
+  belongs_to :user
   has_many :bra_sizes, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :tags
+  has_many :tags, dependent: :destroy
   has_many :categories, through: :tags
 
   def all_tags=(raw_tags)

@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
+gem 'authlogic', '3.4.6'
+gem 'cancancan', '~> 1.10'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record

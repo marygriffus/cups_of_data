@@ -11,13 +11,32 @@
 <header>
   <img src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-bra-icon.png">
   <%= link_to "Cups of data", bras_path %>
+  <div class="user">
+    <% if current_user %>
+      <p>Signed in as <%= current_user.email %></p>
+    <% end %>
+  </div>
 </header>
 
 <nav>
   <li><%= link_to "See all bras", bras_path %></li>
   <li><%= link_to "Add new bra", new_bra_path %></li>
   <li><%= link_to "See categories", categories_path %></li>
+  <% if current_user %>
+    <li><%= link_to 'Sign Out', sign_out_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to 'Sign in', sign_in_path %></li>
+    <li><%= link_to "Sign up", new_user_path %></li>
+  <% end %>
 </nav>
+
+<div class="notices">
+  <% flash.each do |key, value| %>
+  <div class="<%= key %>">
+    <%= value %>
+  </div>
+  <% end %>
+</div>
 
 <div class="main clearfix">
 <%= yield %>
