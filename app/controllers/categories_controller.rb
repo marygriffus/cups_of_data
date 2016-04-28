@@ -6,8 +6,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @tags = @category.tags
+    if @category = Category.find(params[:id])
+      @tags = @category.tags
+    end
   end
 
 end

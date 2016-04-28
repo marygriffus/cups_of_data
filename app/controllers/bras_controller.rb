@@ -3,6 +3,7 @@ class BrasController < ApplicationController
   skip_authorize_resource :only => [:index, :show]
 
   def index
+    @non_tags = false
     @bras = Bra.all
     @index = true
     @bra_size = BraSize.new
@@ -24,6 +25,7 @@ class BrasController < ApplicationController
   end
 
   def show
+    @non_tags = false
     @bra = Bra.find(params[:id])
     @bra_sizes = @bra.bra_sizes
     @review = Review.new
@@ -36,6 +38,7 @@ class BrasController < ApplicationController
   end
 
   def update
+    @non_tags = true
     @bra = Bra.find(params[:id])
     @bra.update(bra_params)
     redirect_to bra_path(@bra)
