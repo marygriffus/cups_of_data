@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/about'
+
   root 'bras#index'
   resources :bras do
     resources :bra_sizes, only: [:new, :create, :edit, :update, :destroy]
