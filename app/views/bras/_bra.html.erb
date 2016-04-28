@@ -20,7 +20,7 @@
     <div class="tags">
       <h4>Tags</h4>
       <% bra.tags.each do |tag| %>
-        <span class="tag"><%= link_to tag.category.name, category_path(tag) %></span>
+        <span class="tag"><%= link_to tag.category.name, category_path(Category.find(tag.category_id)) %></span>
       <% end %>
       <div class="add-tag field">
         <%= form_for bra do |f| %>
