@@ -1,6 +1,8 @@
 <h2>Register</h2>
 
 <%= form_for @user do |f| %>
+  <!-- I like this approach for errors... you should use it in your other forms
+       as well, not just the user forms!  -->
   <%= render 'shared/errors', object: @user %>
 
   <div class="field">
