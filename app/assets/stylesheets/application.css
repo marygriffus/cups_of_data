@@ -83,6 +83,10 @@ nav {
   width: 20%;
 }
 
+nav li {
+  width: 100%;
+}
+
 nav a {
   width: 100%;
   padding: .5em;
