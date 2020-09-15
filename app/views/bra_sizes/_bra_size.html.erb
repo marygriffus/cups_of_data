@@ -8,6 +8,10 @@
   <p>Gore height: <%= bra_size.gore_height %> in.</p>
   <p>Number of hooks: <%= bra_size.num_hooks %></p>
   <p>Aesthetic rating:
+    <!-- this would be a great candidate for a view helper method that takes in the number
+      as an argument (e.g. bra_size.rating_aesthetic) and generates the stars,
+      it would simplify this view quite a bit! we didn't cover these in class, but
+      I bet you could implement them with out much trouble -->
     <div class="rating">
       <% bra_size.rating_aesthetic.times do %>
       <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/1000px-Gold_Star.svg.png">
